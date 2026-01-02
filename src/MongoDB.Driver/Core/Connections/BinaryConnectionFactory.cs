@@ -63,15 +63,17 @@ namespace MongoDB.Driver.Core.Connections
         {
             Ensure.IsNotNull(serverId, nameof(serverId));
             Ensure.IsNotNull(endPoint, nameof(endPoint));
-            return new BinaryConnection(serverId,
-                endPoint,
-                _settings,
-                _streamFactory,
-                _connectionInitializer,
-                _eventSubscriber,
-                _loggerFactory,
-                _socketReadTimeout,
-                _socketWriteTimeout);
+
+            return new EmbeddedConnection(endPoint, serverId, _settings, _connectionInitializer, _eventSubscriber, _loggerFactory);
+            //return new BinaryConnection(serverId,
+            //    endPoint,
+            //    _settings,
+            //    _streamFactory,
+            //    _connectionInitializer,
+            //    _eventSubscriber,
+            //    _loggerFactory,
+            //    _socketReadTimeout,
+            //    _socketWriteTimeout);
         }
     }
 }

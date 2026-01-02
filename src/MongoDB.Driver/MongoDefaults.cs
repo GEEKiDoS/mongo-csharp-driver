@@ -34,7 +34,7 @@ namespace MongoDB.Driver
         private static TimeSpan __maxConnectionIdleTime = TimeSpan.FromMinutes(10);
         private static TimeSpan __maxConnectionLifeTime = TimeSpan.FromMinutes(30);
         private static int __maxBatchCount = 1000;
-        private static int __maxConnectionPoolSize = 100;
+        private static int __maxConnectionPoolSize = 1;
         private static int __maxMessageLength = 16000000; // 16MB (not 16 MiB!)
         private static int __minConnectionPoolSize = 0;
         private static TimeSpan __operationTimeout = TimeSpan.FromSeconds(30);
